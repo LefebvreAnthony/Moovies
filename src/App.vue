@@ -1,17 +1,10 @@
-<script setup></script>
+<script setup>
+import Header from "./components/header/Header.vue";
+import Button from "./components/button/Button.vue";
+</script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper"></div>
-  </header>
+  <Header />
 
   <main></main>
 </template>
