@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div>Hello World !</div>
+    <div>{{ title }}</div>
     <ul>
       <li v-for="(item, index) in menu" :key="index">
         <a href="#">{{ item }}</a>
@@ -13,6 +13,7 @@
 export default {
   data() {
     return {
+      title: "Anim'Moovies",
       menu: ["Accueil", "Liste", "Connexion"],
     };
   },
