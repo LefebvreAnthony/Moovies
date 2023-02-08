@@ -2,9 +2,9 @@
   <header>
     <div>{{ title }}</div>
     <ul>
-      <li v-for="(item, index) in menu" :key="index">
-        <a href="#">{{ item }}</a>
-      </li>
+      <li><router-link to="/">Accueil</router-link></li>
+      <li><router-link to="/login">Connexion</router-link></li>
+      <li><router-link to="/categories">Catégories</router-link></li>
     </ul>
   </header>
 </template>
@@ -14,7 +14,6 @@ export default {
   data() {
     return {
       title: "Anim'Moovies",
-      menu: ["Accueil", "Liste", "Connexion"],
     };
   },
 };

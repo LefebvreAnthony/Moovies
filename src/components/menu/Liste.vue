@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <ul>
       <li v-for="(anime, index) in arrayAnime.data" :key="index">
         {{ anime }}
@@ -14,7 +14,7 @@
         />
       </li>
     </ul>
-  </div>
+  </main>
 </template>
 <script>
 import Card from "../card/Card.vue";
