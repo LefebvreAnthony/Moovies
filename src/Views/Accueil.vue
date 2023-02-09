@@ -1,18 +1,21 @@
 <template>
   <main>
-    <h1>Accueil</h1>
+    <h1 class="">Accueil</h1>
 
-    <div>
-      <ul>
-        <li v-for="anime in animList" :key="anime.id">
-          {{ anime.title }}
+    <div class="container">
+      <ul class="md:flex md:flex-row md:flex-wrap md:gap-4">
+        <li
+          class="md:basis-1/4 md:w-1/4"
+          v-for="(anime, index) in animList"
+          :key="index"
+        >
+          <!-- {{ anime.entry }} -->
+          <!-- <p v-for="(item, i) in anime.entry" :key="i">{{ item.title }}</p> -->
           <Card
-            v-if="anime"
-            :key="anime"
-            :title="anime.title"
-            :urlImg="anime.images.jpg.image_url"
-            :desc="anime.synopsis"
-            :descImg="anime.title + ' poster'"
+            v-for="(item, i) in anime.entry"
+            :key="i"
+            :title="item.title"
+            :urlImg="item.images.jpg.image_url"
           />
         </li>
       </ul>
@@ -22,7 +25,7 @@
 <script>
 import Card from "../components/card/Card.vue";
 import axios from "axios";
-import { ref } from "vue";
+
 export default {
   name: "Accueil",
   components: { Card },
@@ -34,17 +37,17 @@ export default {
   beforeCreate() {
     try {
       axios
-        .get("https://api.jikan.moe/v4/anime")
+        .get("https://api.jikan.moe/v4/recommendations/anime")
         .then((response) => {
           for (const animes of response.data.data) {
             this.animList.push(animes);
           }
+          console.log(this.animList);
         })
         .catch((err) => console.log("Erreur req : " + err));
     } catch (err) {
       console.log(err);
     }
-    console.log(this.animList);
   },
   mounted() {},
 };

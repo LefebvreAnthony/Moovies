@@ -1,8 +1,9 @@
 <template>
-  <article>
-    <figure><img :src="urlImg" :alt="descImg" /></figure>
+  <article class="container">
+    <figure class="w-full">
+      <img class="w-full" :src="urlImg" :alt="title + ' poster'" />
+    </figure>
     <h4>{{ title }}</h4>
-    <p>{{ desc }}</p>
   </article>
 </template>
 <script>
@@ -11,8 +12,6 @@ export default {
   props: {
     title: String,
     urlImg: String,
-    desc: String,
-    descImg: String,
   },
   mounted() {},
 };
