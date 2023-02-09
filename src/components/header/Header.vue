@@ -2,7 +2,7 @@
   <header>
     <div>{{ title }}</div>
     <ul>
-      <li><router-link to="/">Accueil</router-link></li>
+      <li><router-link to="/" exact>Accueil</router-link></li>
       <li><router-link to="/login">Connexion</router-link></li>
       <li><router-link to="/categories">Catégories</router-link></li>
     </ul>

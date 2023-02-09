@@ -14,6 +14,7 @@ export default {
     desc: String,
     descImg: String,
   },
+  mounted() {},
 };
 </script>
 <style scoped src="./card.css"></style>
