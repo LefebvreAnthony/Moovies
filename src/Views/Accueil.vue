@@ -3,22 +3,16 @@
     <h1 class="">Accueil</h1>
 
     <div class="container">
-      <ul class="md:flex md:flex-row md:flex-wrap md:gap-4">
-        <li
-          class="md:basis-1/4 md:w-1/4"
+      <section class="mx-auto grid gap-5 sm:grid-cols-2 md:grid-cols-4 px-4">
+        <!-- {{ anime.entry }} -->
+        <!-- <p v-for="(item, i) in anime.entry" :key="i">{{ item.title }}</p> -->
+        <Card
           v-for="(anime, index) in animList"
           :key="index"
-        >
-          <!-- {{ anime.entry }} -->
-          <!-- <p v-for="(item, i) in anime.entry" :key="i">{{ item.title }}</p> -->
-          <Card
-            v-for="(item, i) in anime.entry"
-            :key="i"
-            :title="item.title"
-            :urlImg="item.images.jpg.image_url"
-          />
-        </li>
-      </ul>
+          :title="anime.entry[0].title"
+          :urlImg="anime.entry[0].images.jpg.image_url"
+        />
+      </section>
     </div>
   </main>
 </template>
@@ -49,7 +43,9 @@ export default {
       console.log(err);
     }
   },
-  mounted() {},
+  mounted() {
+    console.log(this.animList);
+  },
 };
 </script>
 <style></style>

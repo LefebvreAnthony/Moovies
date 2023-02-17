@@ -1,9 +1,15 @@
 <template>
-  <article class="container">
-    <figure class="w-full">
-      <img class="w-full" :src="urlImg" :alt="title + ' poster'" />
+  <article class="text-center relative h-full">
+    <figure class="h-full">
+      <img
+        class="object-cover w-full h-full"
+        :src="urlImg"
+        :alt="title + ' poster'"
+      />
     </figure>
-    <h4>{{ title }}</h4>
+    <div class="absolute inset-0 hover:visible z-10 text-xl">
+      <h4 :title="title">{{ title }}</h4>
+    </div>
   </article>
 </template>
 <script>
